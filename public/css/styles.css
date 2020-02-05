@@ -1,0 +1,7 @@
+#navbar {
+    background: #ff7b00;
+}
+
+#navbar .navbar-nav > li > a  {
+    color: #ffffff;
+}
