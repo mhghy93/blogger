@@ -13,6 +13,8 @@ mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true, useFi
 
 // Routes
 const indexRoute = require('./routes/index');
+const signUpRoute = require('./routes/signup');
+const loginRoute = require('./routes/login');
 
 app.set('view engine', 'ejs');
 
@@ -21,5 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
 app.use(indexRoute);
+app.use(signUpRoute);
+app.use(loginRoute);
 
 app.listen(3000);
