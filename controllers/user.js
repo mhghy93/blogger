@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const passport = require('passport');
 const User = require('../models/user');
 
 exports.getSignUp = (req, res) => {
@@ -75,4 +76,18 @@ exports.postSignUp = (req, res) => {
 
 exports.getLogIn = (req, res) => {
     res.render('login', { title: 'Log In' });
+};
+
+exports.postLogIn = (req, res, next) => {
+    passport.authenticate('local', {
+        successRedirect: '/',
+        failureRedirect: '/login',
+        failureFlash: true
+    })(req, res, next);
+};
+
+exports.logout = (req, res) => {
+    req.logout();
+    req.flash('success_msg', 'You are logged out');
+    res.redirect('/login');
 };
