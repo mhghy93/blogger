@@ -21,6 +21,7 @@ mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true, useFi
 const indexRoute = require('./routes/index');
 const signUpRoute = require('./routes/signup');
 const loginRoute = require('./routes/login');
+const profileRoute = require('./routes/user/profile');
 
 app.set('view engine', 'ejs');
 
@@ -54,5 +55,6 @@ app.use((req, res, next) => {
 app.use(indexRoute);
 app.use(signUpRoute);
 app.use(loginRoute);
+app.use(profileRoute);
 
 app.listen(3000);

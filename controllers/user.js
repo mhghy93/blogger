@@ -12,7 +12,7 @@ exports.postSignUp = (req, res) => {
     let errors = [];
 
     if (!firstName || !lastName || !email || !password || !confirmPassword) {
-        errors.push({ message: 'You need too fill this' });
+        errors.push({ message: 'You need to fill this' });
     }
     if (password !== confirmPassword) {
         errors.push({ message: 'Password do not match' });
