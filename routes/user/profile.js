@@ -1,10 +1,8 @@
 const express = require('express');
-const postController = require('../../controllers/post');
+const userController = require('../../controllers/user');
 const { isLoggedIn } = require('../../middleware/auth');
 const router = express.Router();
 
-router.get('/user/addPost', isLoggedIn, postController.getAddPost);
-
-router.post('/user/addPost', isLoggedIn, postController.postAddPost);
+router.get('/user/profile', isLoggedIn, userController.showUserProfile);
 
 module.exports = router;

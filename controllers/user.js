@@ -91,3 +91,7 @@ exports.logout = (req, res) => {
     req.flash('success_msg', 'You are logged out');
     res.redirect('/login');
 };
+
+exports.showUserProfile = (req, res) => {
+    res.render('user/profile', { title: 'Profile' });
+}

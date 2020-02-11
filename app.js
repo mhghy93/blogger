@@ -22,6 +22,7 @@ const indexRoute = require('./routes/index');
 const signUpRoute = require('./routes/signup');
 const loginRoute = require('./routes/login');
 const profileRoute = require('./routes/user/profile');
+const postRoute = require('./routes/user/post');
 
 app.set('view engine', 'ejs');
 
@@ -56,5 +57,6 @@ app.use(indexRoute);
 app.use(signUpRoute);
 app.use(loginRoute);
 app.use(profileRoute);
+app.use(postRoute);
 
 app.listen(3000);
