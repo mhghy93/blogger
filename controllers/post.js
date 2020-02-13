@@ -21,3 +21,11 @@ exports.postAddPost = (req, res) => {
         })
         .catch(err => console.log(err));
 };
+
+exports.postList = (req, res) => {
+    Post.find({ userId: req.params.userId })
+        .then(post => {
+            res.render('user/postList', { post: post, title: 'Post List' });
+        })
+        .catch(err => console.log(err));
+};
