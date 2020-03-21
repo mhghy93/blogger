@@ -1,6 +1,25 @@
-<%- include('partials/header') %>
+<%- include('partials/header') %> <%- include('partials/navigation') %>
 
-<%- include('partials/navigation') %>
-
+<div class="container mt-5 mb-5">
+    <div class="row mb-4">
+        <% for (let i = 0; i < post.length; i++) { %>
+        <div class="col-sm-6 mb-5">
+            <div class="card shadow bg-white rounded">
+                <div class="card-body">
+                    <h5 class="card-title"><%= post[i].title %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        <%= post[i].date.toDateString() %>
+                    </h6>
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the
+                        bulk of the card's content.
+                    </p>
+                    <a href="#" class="card-link">More</a>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</div>
 
 <%- include('partials/footer') %>
