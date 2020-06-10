@@ -29,3 +29,7 @@ exports.postList = (req, res) => {
         })
         .catch(err => console.log(err));
 };
+
+exports.postDetail = (req, res) => {
+    
+};
