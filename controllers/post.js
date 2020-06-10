@@ -31,5 +31,10 @@ exports.postList = (req, res) => {
 };
 
 exports.postDetail = (req, res) => {
-    
+    Post.findById(req.params.postId)
+        .then(post => {
+            console.log(post);
+            res.render('postDetail', { post: post, title: 'Post detail' });
+        })
+        .catch(err => console.log(err));
 };

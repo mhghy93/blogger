@@ -23,10 +23,11 @@ const signUpRoute = require('./routes/signup');
 const loginRoute = require('./routes/login');
 const profileRoute = require('./routes/user/profile');
 const postRoute = require('./routes/user/post');
+const postDetailRoute = require('./routes/postdetail');
 
 app.set('view engine', 'ejs');
 
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
@@ -58,5 +59,6 @@ app.use(signUpRoute);
 app.use(loginRoute);
 app.use(profileRoute);
 app.use(postRoute);
+app.use(postDetailRoute);
 
 app.listen(3000);

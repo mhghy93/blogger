@@ -8,22 +8,8 @@
             <div class="card shadow bg-white rounded">
                 <div class="card-body">
                     <h5 class="card-title">
-                        <%= post[i].title %>
+                        <%= post.title %>
                     </h5>
-                    <h6 class="card-subtitle mb-2 text-muted">
-                        <%= post[i].date.toDateString() %>
-                    </h6>
-                    <div class="card-subtitle mb2 text-muted">
-                        <p>
-                            <em>
-                                By <%= post[i].userId.firstName %>
-                                <%= post[i].userId.lastName %>
-                            </em>
-                        </p>
-                    </div>
-                    <p class="card-text">
-                        <%= post[i].content.substring(0, 200) %>
-                    </p>
                     <a href="#" class="card-link">More</a>
                 </div>
             </div>
