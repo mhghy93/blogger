@@ -5,13 +5,18 @@
 <div class="container mt-5 mb-5">
     <div class="row justify-content-center px-5 pt-2 pb-5">
         <div class="col-md-8">
-            <div class="card login-card">
+            <div class="card shadow bg-white rounded">
                 <h5 class="card-header bg-dark text-center text-white">Add Course</h5>
                 <div class="card-body">
                     <form action="/user/addPost" method="POST">
                         <div class="form-group">
                             <label for="title">Title</label>
                             <input type="text" class="form-control" id="title" name="title" placeholder="Title"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="pic" name="pic" placeholder="Image Url"
                                 required>
                         </div>
                         <div class="form-group">

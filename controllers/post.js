@@ -5,11 +5,12 @@ exports.getAddPost = (req, res) => {
 };
 
 exports.postAddPost = (req, res) => {
-    const { title, content } = req.body;
+    const { title, pic, content } = req.body;
     const userId = req.user._id;
     
     const newPost = new Post({
         title: title,
+        pic: pic,
         content: content,
         userId: userId
     }); 

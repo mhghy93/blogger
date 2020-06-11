@@ -1,7 +1,36 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+    background: #f2f2f2;
+}
+
 #navbar {
-    background: #2d2d86;
+    background: #ffffff;
 }
 
 #navbar .navbar-nav > li > a  {
+    color: #000000;
+}
+
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+  
+#page-content {
+    flex: 1 0 auto;
+}
+
+#sticky-footer {
+    flex-shrink: none;
+    background: #000000;
     color: #ffffff;
 }

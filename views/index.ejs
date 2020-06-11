@@ -2,30 +2,33 @@
 
 <%- include('partials/navigation') %>
 
+<%- include('partials/background') %>
+
 <div class="container mt-5 mb-5">
     <div class="row mb-4">
         <% for (let i = 0; i < post.length; i++) { %>
-        <div class="col-sm-6 mb-5">
-            <div class="card shadow bg-white rounded">
+        <div class="col-lg-4 col-md-6 mb-5">
+            <div class="card shadow bg-white rounded h-100">
+                <a href="/posts/<%= post[i]._id %>">
+                    <img class="card-img-top img-thumbnail" src="<%= post[i].pic %>" alt="<%= post[i].title %>">
+                </a>
                 <div class="card-body">
                     <h5 class="card-title">
                         <%= post[i].title %>
                     </h5>
-                    <h6 class="card-subtitle mb-2 text-muted">
-                        <%= post[i].date.toDateString() %>
-                    </h6>
                     <div class="card-subtitle mb2 text-muted">
                         <p>
                             <em>
                                 By <%= post[i].userId.firstName %>
                                 <%= post[i].userId.lastName %>
                             </em>
+                            on <%= post[i].date.toDateString() %>
                         </p>
                     </div>
                     <p class="card-text">
-                        <%= post[i].content.substring(0, 200) %>
+                        <%= post[i].content.substring(0, 300) %> . . . .
                     </p>
-                    <a href="/posts/<%= post[i]._id %>" class="card-link">More</a>
+                    <a href="/posts/<%= post[i]._id %>" class="btn btn-info">More</a>
                 </div>
             </div>
         </div>
