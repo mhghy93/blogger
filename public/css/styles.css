@@ -29,6 +29,16 @@ body {
     flex: 1 0 auto;
 }
 
+.card-body > a {
+    color: #000000;
+  }
+  
+.card-body > a:focus, .card-body > a:hover {
+    text-decoration: none;
+    color: #595959;
+}
+  
+
 #sticky-footer {
     flex-shrink: none;
     background: #000000;

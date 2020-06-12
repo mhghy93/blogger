@@ -13,9 +13,11 @@
                     <img class="card-img-top img-thumbnail" src="<%= post[i].pic %>" alt="<%= post[i].title %>">
                 </a>
                 <div class="card-body">
-                    <h5 class="card-title font-weight-bold">
-                        <%= post[i].title %>
-                    </h5>
+                    <a href="/posts/<%= post[i]._id %>">
+                        <h5 class="card-title font-weight-bold">
+                            <%= post[i].title %>
+                        </h5>
+                    </a>
                     <div class="card-subtitle mb2 text-muted">
                         <p>
                             <em>
