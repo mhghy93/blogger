@@ -6,7 +6,7 @@
     <div class="row justify-content-center px-5 pt-2 pb-5">
         <div class="col-md-6">
             <div class="card shadow bg-white rounded">
-                <h5 class="card-header text-center">Please Log In</h5>
+                <h5 class="card-header text-center bg-dark text-white">Please Log In</h5>
                 <div class="card-body">
                     <%- include('./partials/messages') %>
                     <form action="/login" method="POST">
@@ -20,7 +20,7 @@
                             <input type="password" class="form-control" id="password" name="password"
                                 placeholder="Password" required>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block" name="logIn">Log In</button>
+                        <button type="submit" class="btn btn-block bg-dark text-white" name="logIn">Log In</button>
                     </form>
                     <div class="text-center">
                         <a class="d-block mt-3" href="/signup">Don't have an account?</a>
