@@ -4,13 +4,25 @@
 
 <div class="container mt-5 mb-5">
     <div class="row mb-4">
-        <div class="col-sm-6 mb-5">
+        <div class="col-sm-12 mb-5">
             <div class="card shadow bg-white rounded">
+                <img class="card-img-top img-thumbnail" src="<%= post.pic %>" alt="<%= post.title %>">
                 <div class="card-body">
-                    <h5 class="card-title">
+                    <h5 class="card-title font-weight-bold">
                         <%= post.title %>
                     </h5>
-                    <a href="#" class="card-link">More</a>
+                    <div class="card-subtitle mb2 text-muted">
+                        <p>
+                            <em>
+                                By <%= post.userId.firstName %>
+                                <%= post.userId.lastName %>
+                            </em>
+                            on <%= post.date.toDateString() %>
+                        </p>
+                    </div>
+                    <p class="card-text">
+                        <%= post.content %>
+                    </p>
                 </div>
             </div>
         </div>
