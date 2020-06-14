@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const User = require('../models/user');
+const Post = require('../models/post');
 
 exports.getSignUp = (req, res) => {
     res.render('signup', { title: 'Sign Up' });
@@ -93,5 +94,10 @@ exports.logout = (req, res) => {
 };
 
 exports.showUserProfile = (req, res) => {
-    res.render('user/profile', { title: 'Profile' });
+    Post.find({ userId: req.params.userId })
+        .then(post => {
+            console.log(post);
+            res.render('user/profile', { post: post, title: 'Profile' });
+        })
+        .catch(err => console.log(err));
 }

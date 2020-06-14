@@ -1,5 +1,4 @@
 const Post = require('../models/post');
-const User = require('../models/user');
 
 exports.getPostData = (req, res) => {
     Post.find()
