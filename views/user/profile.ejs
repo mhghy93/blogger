@@ -9,10 +9,10 @@
                 <img src="../img/avatar.jpg" class="card-img-top" alt="...">
                 <hr>
                 <div class="card-body">
-                  <p class="card-text font-weight-bold">
+                  <p class="card-text">
                     <%= loggedUser.firstName %> <%= loggedUser.lastName %>
                   </p>
-                  <p class="card-text font-weight-bold">Member since <%= loggedUser.date.toDateString().substring(4) %></p>
+                  <p class="card-text">Member since <%= loggedUser.date.toDateString().substring(4) %></p>
                 </div>
             </div>
         </div>
@@ -59,6 +59,7 @@
                         </div>
                     </div>
 
+                    <h5 class="font-weight-bold mb-3 mt-3">My posts</h5>
                     <div class="row mt-2">
                         <div class="table-responsive-sm">
                             <table class="table table-striped">
@@ -77,7 +78,7 @@
                                                         <td><%= post[i].title %></td>
                                                         <td><%= post[i].date %></td>
                                                         <td>
-                                                            <a href="" class="btn btn-primary">Edit</a>
+                                                            <a href="/editPost/<%= post[i]._id %>" class="btn btn-primary">Edit</a>
                                                         </td>
                                                     </tr>
                                             <%  } %>

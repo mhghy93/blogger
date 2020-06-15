@@ -23,14 +23,6 @@ exports.postAddPost = (req, res) => {
         .catch(err => console.log(err));
 };
 
-exports.postList = (req, res) => {
-    Post.find({ userId: req.params.userId })
-        .then(post => {
-            res.render('user/postList', { post: post, title: 'Post List' });
-        })
-        .catch(err => console.log(err));
-};
-
 exports.postDetail = (req, res) => {
     Post.findById(req.params.postId)
         .populate('userId')
@@ -39,4 +31,35 @@ exports.postDetail = (req, res) => {
             res.render('postDetail', { post: post, title: 'Post detail' });
         })
         .catch(err => console.log(err));
+};
+
+exports.getEditPost = (req, res) => {
+    Post.findById(req.params.postId)
+        .then(post => {
+            res.render('user/editPost', { post: post, title: 'Edit Post'})
+        })
+        .catch(err => console.log(err));
+};
+
+exports.postEditPost = (req, res) => {
+    const updatedTitle = req.body.title;
+    const updatedImageUrl = req.body.pic;
+    const updatedContent = req.body.content;
+    const userId = req.user._id;
+
+    Post.findById(req.params.postId)
+        .then(post => {
+            post.title = updatedTitle;
+            post.pic = updatedImageUrl;
+            post.content = updatedContent;
+            post.userId = userId;
+            return post.save();
+        })
+        .then(result => {
+            console.log('Post updated');
+            res.redirect('/posts/' + req.params.postId);
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
