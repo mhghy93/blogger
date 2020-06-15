@@ -63,3 +63,14 @@ exports.postEditPost = (req, res) => {
             console.log(err);
         });
 };
+
+exports.deletePost = (req, res) => {
+    Post.findByIdAndRemove(req.params.postId)
+        .then(() => {
+            console.log('Post deleted');
+            res.redirect('/');
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};

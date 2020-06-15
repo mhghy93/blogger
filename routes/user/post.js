@@ -11,4 +11,6 @@ router.get('/editPost/:postId', isLoggedIn, postController.getEditPost);
 
 router.put('/user/editPost/:postId', isLoggedIn, postController.postEditPost);
 
+router.delete('/user/deletePost/:postId', isLoggedIn, postController.deletePost);
+
 module.exports = router;
