@@ -101,3 +101,35 @@ exports.showUserProfile = (req, res) => {
         })
         .catch(err => console.log(err));
 }
+
+exports.getEditProfile = (req, res) => {
+    User.findById(req.params.userId)
+    .then(user => {
+        console.log(user);
+        res.render('user/editProfile', { user: user, title: 'Edit Profile' });
+    })
+    .catch(err => console.log(err));
+};
+
+exports.postEditProfile = (req, res) => {
+    const updatedFirstName = req.body.firstName;
+    const updatedLastName = req.body.lastName;
+    const updatedEmail = req.body.email;
+
+    User.findById(req.params.userId)
+        .then(user => {
+            user.firstName = updatedFirstName;
+            user.lastName = updatedLastName;
+            user.email = updatedEmail;
+            return user.save();
+        })
+        .then(result => {
+            console.log('Profile updated');
+            res.redirect('/profile/' + req.params.userId);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
+
+exports.deleteProfile = (req, res) => {};

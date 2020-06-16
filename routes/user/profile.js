@@ -5,4 +5,8 @@ const router = express.Router();
 
 router.get('/profile/:userId', isLoggedIn, userController.showUserProfile);
 
+router.get('/editProfile/:userId', isLoggedIn, userController.getEditProfile);
+
+router.put('/editProfile/:userId', isLoggedIn, userController.postEditProfile);
+
 module.exports = router;
