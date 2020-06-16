@@ -61,6 +61,8 @@ app.use(profileRoute);
 app.use(postRoute);
 app.use(postDetailRoute);
 
+app.use((req, res) => res.render('notfound', { title: 'Not Found'}));
+
 app.listen(3000, () => {
     console.log('Listening on port 3000');
 });
