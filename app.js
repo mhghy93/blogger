@@ -5,6 +5,8 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+const favicon = require('serve-favicon')
+const path = require('path')
 const app = express();
 
 // Passport configuration
@@ -28,6 +30,7 @@ const postDetailRoute = require('./routes/postdetail');
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
+app.use(favicon(path.join(__dirname, 'public', 'img', 'favicon.ico')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
