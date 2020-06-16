@@ -9,4 +9,6 @@ router.get('/editProfile/:userId', isLoggedIn, userController.getEditProfile);
 
 router.put('/editProfile/:userId', isLoggedIn, userController.postEditProfile);
 
+router.delete('/deleteProfile/:userId', isLoggedIn, userController.deleteProfile);
+
 module.exports = router;

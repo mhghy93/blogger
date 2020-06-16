@@ -132,4 +132,22 @@ exports.postEditProfile = (req, res) => {
         });
 };
 
-exports.deleteProfile = (req, res) => {};
+exports.deleteProfile = (req, res) => {
+    Post.deleteMany({ userId: req.params.userId })
+        .then(() => {
+            console.log('Posts deleted');
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
+    User.findByIdAndRemove(req.params.userId)
+        .then(() => {
+            console.log('Account deleted');
+            req.logout();
+            res.redirect('/');
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
