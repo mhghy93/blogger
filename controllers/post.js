@@ -1,7 +1,7 @@
 const Post = require('../models/post');
 
 exports.getAddPost = (req, res) => {
-    res.render('user/addPost', { title: 'Add Post' });
+    res.render('user/addPost', { title: 'Add Post', createPost: true });
 };
 
 exports.postAddPost = (req, res) => {
@@ -36,7 +36,7 @@ exports.postDetail = (req, res) => {
 exports.getEditPost = (req, res) => {
     Post.findById(req.params.postId)
         .then(post => {
-            res.render('user/editPost', { post: post, title: 'Edit Post'})
+            res.render('user/editPost', { post: post, title: 'Edit Post', createPost: true})
         })
         .catch(err => console.log(err));
 };

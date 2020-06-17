@@ -7,7 +7,7 @@
 <div class="container mt-5 mb-5">
     <div class="row mb-4">
         <% for (let i = 0; i < post.length; i++) { %>
-        <div class="col-lg-6 col-md-6 mb-5">
+        <div class="col-lg-4 col-md-6 mb-5">
             <div class="card shadow bg-white rounded h-100">
                 <a href="/posts/<%= post[i]._id %>">
                     <img class="card-img-top img-thumbnail" src="<%= post[i].pic %>" alt="<%= post[i].title %>">
@@ -28,7 +28,7 @@
                         </p>
                     </div>
                     <p class="card-text">
-                        <%= post[i].content.substring(0, 300) %> . . . .
+                        <%- post[i].content.substring(0, 300) %> . . . .
                     </p>
                 </div>
             </div>

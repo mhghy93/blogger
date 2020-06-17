@@ -21,7 +21,14 @@
                         </div>
                         <div class="form-group">
                             <label for="content">Content</label>
-                            <textarea class="form-control" name="content" id="content" rows="10" required></textarea>
+                            <textarea id="body" class="form-control" name="content" id="content" rows="10" required></textarea>
+                            <script>
+                                $('#body').summernote({
+                                  placeholder: 'Type',
+                                  tabsize: 2,
+                                  height: 250
+                                });
+                            </script>
                         </div>
                         <button type="submit" class="btn btn-block bg-dark text-white" name="addPost">Add Post</button>
                     </form>
