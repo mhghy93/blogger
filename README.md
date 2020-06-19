@@ -1,4 +1,4 @@
-# blogger
+# TechBlogger
 
 This is a blogging app where users can create, update and delete posts. This web app was developed using HTML, CSS, Bootstrap, jQuery, Nodejs and MongoDB
 
